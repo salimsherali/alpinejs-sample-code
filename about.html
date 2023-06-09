@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alpine.js Sample App - About</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css">
+  <link rel="stylesheet" href="asset/custom.css">
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
+</head>
+<body>
+    <div x-data="{ message: 'Hello, Alpine.js!', loaded: false } "  x-init="setTimeout(() => { loaded = true; }, 100)">
+        <div class="container"
+        :class="{ 'loaded': loaded }"
+         x-show="loaded">
+            <h1 x-text="message"></h1>
+            
+            <button x-on:click="message = 'Clicked!'">Click me</button>
+            
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, autem!</p>
+            
+            <a href="index.html">Go to Home page</a>
+        </div>
+    </div>
+</body>
+</html>
